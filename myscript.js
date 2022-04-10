@@ -1,4 +1,6 @@
-const newArray = (16 ** 2);
+var hardcodedInput = 12;
+
+const newArray = (hardcodedInput ** 2);
 var currentColor = '';
 
 // This part created an array of boxes - size depends on newArray value
@@ -6,6 +8,7 @@ for (i = 0; i < newArray; i++) {
     var div = document.createElement('div');
     div.setAttribute("id", "box-" + i);
     div.setAttribute("class", "box");
+    div.setAttribute("style", `width: ${600 / hardcodedInput}px; height: ${600 / hardcodedInput}px`);
     container.appendChild(div);
 }
 
@@ -16,7 +19,7 @@ const reset = document.querySelector('#reset');
 
 // This part colors the clicked box to the chosen color
 box.forEach((box) => {
-    box.addEventListener('mousedown', (e) => {
+    box.addEventListener('mouseover', (e) => {
         e.target.style.background = currentColor;
     });
 });
